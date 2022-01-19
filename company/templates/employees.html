@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class = 'container-fluid'>
+<div class="jumbotron">
+<form method="POST">
+{{form.hidden_tag()}}
+<div class= 'form-group' >
+{{form.name.label(class= 'form-group')}} <br>
+{{form.name}}<br>
+</div>
+<div class= 'form-group' >
+{{form.salary.label(class = 'form-group')}}<br>
+{{form.salary}}<br>
+</div>
+<div class= 'form-group' >
+{{form.birthday.label(class = 'form-group')}}<br>
+{{form.birthday}}<br>
+</div>
+<div class= 'form-group' >
+{{form.post.label(class = 'form-group')}}<br>
+{{form.post}}<br>
+</div>
+<div class= 'form-group' >
+{{form.department_id.label(class = 'form-group')}}<br>
+{{form.department_id}}<br>
+</div>
+{{form.submit(class = 'btn btn-primary')}}
+</form>
+</div>
+</div>
+{% endblock %}

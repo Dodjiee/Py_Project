@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class = 'jumbotron'>
+
+
+    <h2 class = 'display-6'>Here is a list of all employees : </h2>
+{% for employee in employees  %}
+{% if employee%}
+<li>
+    {{employee}} <a href = "{{url_for('employees.one_emp', employee_id = employee.id)}}">Update</a>
+</li>
+{%endif%}
+        
+{% endfor %}
+
+
+{%endblock%}
+

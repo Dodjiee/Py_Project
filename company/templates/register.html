@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method='post'>
+    {{form.hidden_tag()}}
+<div class = 'jumbotron'>
+<div class = 'form-group'>
+{{form.email.label()}} <br>
+{{form.email(class="col-sm-2 col-form-label col-form-label-sm")}}
+</div>
+<ul>
+    {% for error in form.email.errors %}
+    <li style="color:red;">{{ error }}</li>
+    {% endfor %}
+</ul>
+<div class = 'form-group'>
+{{form.username.label()}}<br>
+{{form.username(class="col-sm-2 col-form-label col-form-label-sm")}} </div>
+<ul>
+    {% for error in form.username.errors %}
+    <li style="color:red;">{{ error }}</li>
+    {% endfor %}
+</ul>
+<div class = 'form-group'>
+{{form.password.label()}}<br>
+{{form.password(class="col-sm-2 col-form-label col-form-label-sm")}}  
+</div>
+<div class = 'form-group'>
+{{form.pass_confirm.label()}}<br>
+{{form.pass_confirm(class="col-sm-2 col-form-label col-form-label-sm")}}
+</div>
+<div class = 'form-group'>
+{{form.submit(class = 'btn btn-primary')}}
+</div>
+</form>
+{%endblock%}
